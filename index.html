@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Perfil | LinkedIn Style</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navbar estilo LinkedIn -->
+    <nav class="navbar navbar-expand-lg linkedin-navbar fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#"><i class="bi bi-linkedin"></i></a>
+            <form class="d-flex me-auto ms-3 d-none d-md-block">
+                <div class="search-box">
+                    <i class="bi bi-search"></i>
+                    <input class="form-control" type="search" placeholder="Buscar" aria-label="Search">
+                </div>
+            </form>
+            <ul class="navbar-nav ms-auto align-items-center">
+                <li class="nav-item text-center mx-2">
+                    <a class="nav-link active" href="#"><i class="bi bi-house-door-fill d-block"></i><small>Inicio</small></a>
+                </li>
+                <li class="nav-item text-center mx-2">
+                    <a class="nav-link" href="#"><i class="bi bi-people-fill d-block"></i><small>Mi red</small></a>
+                </li>
+                <li class="nav-item text-center mx-2">
+                    <a class="nav-link" href="#"><i class="bi bi-briefcase-fill d-block"></i><small>Empleos</small></a>
+                </li>
+                <li class="nav-item text-center mx-2">
+                    <a class="nav-link" href="#"><i class="bi bi-chat-dots-fill d-block"></i><small>Mensajes</small></a>
+                </li>
+                <li class="nav-item text-center mx-2">
+                    <a class="nav-link" href="#"><i class="bi bi-bell-fill d-block"></i><small>Notificaciones</small></a>
+                </li>
+                <li class="nav-item dropdown text-center mx-2">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+                        <div class="profile-mini d-block mx-auto"></div>
+                        <small>Yo</small>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Espacio para navbar fija -->
+    <div class="navbar-spacer"></div>
+
+    <!-- Contenido principal -->
+    <div class="container main-content">
+        <div class="row">
+            <!-- Columna derecha: Sidebar -->
+            <div class="col-lg-5 order-1 order-lg-2">
+                <!-- Widget de idioma -->
+                <div class="card mb-3">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between">
+                            <span class="text-muted small">Perfil • Español</span>
+                            <button class="btn btn-link text-decoration-none p-0"><i class="bi bi-globe"></i></button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Widget de imagen de perfil -->
+                <div class="card mb-3">
+                    <div class="card-body text-center">
+                        <p class="small text-muted mb-2">Añade una foto de perfil para que te reconozcan</p>
+                        <button class="btn btn-outline-primary btn-sm">Añadir foto</button>
+                    </div>
+                </div>
+
+                <!-- Widget de estadísticas -->
+                <div class="card mb-3">
+                    <div class="card-body">
+                        <h5 class="h6 mb-3">Análisis del perfil</h5>
+                        <div class="stat-item d-flex justify-content-between mb-2">
+                            <span class="text-secondary small"><i class="bi bi-eye me-2"></i>Visitas al perfil</span>
+                            <span class="fw-bold text-primary">24</span>
+                        </div>
+                        <div class="stat-item d-flex justify-content-between mb-2">
+                            <span class="text-secondary small"><i class="bi bi-bar-chart me-2"></i>Impresiones</span>
+                            <span class="fw-bold text-primary">156</span>
+                        </div>
+                        <div class="stat-item d-flex justify-content-between">
+                            <span class="text-secondary small"><i class="bi bi-search me-2"></i>Apariciones en búsquedas</span>
+                            <span class="fw-bold text-primary">8</span>
+                        </div>
+                        <hr>
+                        <a href="#" class="text-decoration-none text-secondary small">Ver todas las analíticas <i class="bi bi-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <!-- Widget de enlaces -->
+                <div class="card mb-3">
+                    <div class="card-body">
+                        <h5 class="h6 mb-3">Enlaces</h5>
+                        <div class="d-flex align-items-center mb-2">
+                            <i class="bi bi-github fs-5 me-2"></i>
+                            <a href="#" class="text-decoration-none">github.com/miperfil</a>
+                        </div>
+                        <div class="d-flex align-items-center mb-2">
+                            <i class="bi bi-envelope fs-5 me-2"></i>
+                            <a href="#" class="text-decoration-none">email@ejemplo.cl</a>
+                        </div>
+                        <div class="d-flex align-items-center">
+                            <i class="bi bi-linkedin fs-5 me-2 text-primary"></i>
+                            <a href="#" class="text-decoration-none">linkedin.com/in/miperfil</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Columna izquierda: Perfil -->
+            <div class="col-lg-7 order-2 order-lg-1">
+                <!-- Tarjeta de perfil -->
+                <div class="card profile-card mb-3">
+                    <div class="profile-banner"></div>
+                    <div class="card-body position-relative">
+                        <img src="assets/foto%20perfil%20yo.jpg" alt="Foto de perfil" class="profile-photo">
+                        <div class="row">
+                            <div class="col-md-8">
+                                <h2 class="profile-name mt-5 mb-1">Estudiante Analista Programador</h2>
+                                <p class="profile-headline text-secondary mb-2">Segundo año - INACAP Sede Valparaíso</p>
+                                <p class="profile-location text-muted mb-2"><i class="bi bi-geo-alt"></i> Valparaíso, Chile • <a href="#" class="text-decoration-none">Información de contacto</a></p>
+                                <p class="profile-connections text-primary mb-3"><i class="bi bi-people-fill"></i> 100+ conexiones</p>
+                            </div>
+                            <div class="col-md-4 text-md-end mt-4 mt-md-0">
+                                <div class="institution-badge mb-2">
+                                    <img src="https://portal.inacap.cl/documents/76264/1932753/1200.400.jpg/cfe417eb-fce8-f0c3-d3cb-4bbb189c5f06?version=1.0&t=1744301023067" alt="Logo INACAP" class="institution-logo">
+                                    <!-- <span class="ms-2">INACAP</span> -->
+                                </div>
+                            </div>
+                        </div>
+                        <div class="profile-actions mt-3">
+                            <button class="btn btn-primary me-2"><i class="bi bi-plus-lg"></i> Conectar</button>
+                            <button class="btn btn-outline-secondary me-2"><i class="bi bi-envelope"></i> Mensaje</button>
+                            <button class="btn btn-outline-secondary"><i class="bi bi-three-dots"></i> Más</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sección Acerca de -->
+                <div class="card mb-3">
+                    <div class="card-body">
+                        <h3 class="card-title h5 mb-3">Acerca de</h3>
+                        <p class="card-text">
+                            Estudiante de segundo año de la carrera Analista Programador en INACAP sede Valparaíso. 
+                            Apasionado por la tecnología y el desarrollo de software, con interés en crear soluciones 
+                            innovadoras que aporten valor a la sociedad.
+                        </p>
+                        <p class="card-text">
+                            Durante mi formación he adquirido conocimientos en programación frontend y backend, 
+                            bases de datos, y metodologías ágiles de desarrollo. Me caracterizo por mi dedicación, 
+                            capacidad de aprendizaje y trabajo en equipo.
+                        </p>
+                        <a href="#" class="text-decoration-none text-secondary">...ver más</a>
+                    </div>
+                </div>
+
+                <!-- Sección Experiencia -->
+                <div class="card mb-3">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <h3 class="card-title h5 mb-0">Experiencia</h3>
+                            <button class="btn btn-light btn-sm"><i class="bi bi-plus-lg"></i></button>
+                        </div>
+                        
+                        <div class="experience-item d-flex mb-4">
+                            <div class="company-logo-placeholder bg-primary text-white rounded d-flex align-items-center justify-content-center me-3">
+                                <i class="bi bi-code-slash fs-4"></i>
+                            </div>
+                            <div class="flex-grow-1">
+                                <h4 class="h6 mb-1">Proyectos Académicos - Programación Frontend</h4>
+                                <p class="text-secondary mb-1">INACAP • Práctica</p>
+                                <p class="text-muted small mb-2">mar. 2025 - Presente</p>
+                                <p class="small text-secondary">Desarrollo de sitios web responsivos utilizando HTML, CSS, Bootstrap y JavaScript. Unidad 1 - Programación Frontend.</p>
+                            </div>
+                        </div>
+
+                        <div class="experience-item d-flex">
+                            <div class="company-logo-placeholder bg-success text-white rounded d-flex align-items-center justify-content-center me-3">
+                                <i class="bi bi-laptop fs-4"></i>
+                            </div>
+                            <div class="flex-grow-1">
+                                <h4 class="h6 mb-1">Estudiante Analista Programador</h4>
+                                <p class="text-secondary mb-1">INACAP Sede Valparaíso</p>
+                                <p class="text-muted small mb-2">2024 - Presente</p>
+                                <p class="small text-secondary">Formación en desarrollo de software, bases de datos, y análisis de sistemas. Segundo año en curso.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sección Educación -->
+                <div class="card mb-3">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <h3 class="card-title h5 mb-0">Educación</h3>
+                            <button class="btn btn-light btn-sm"><i class="bi bi-plus-lg"></i></button>
+                        </div>
+                        
+                        <div class="education-item d-flex">
+                            <div class="institution-logo-placeholder bg-danger text-white rounded d-flex align-items-center justify-content-center me-3">
+                                <i class="bi bi-mortarboard-fill fs-4"></i>
+                            </div>
+                            <div class="flex-grow-1">
+                                <h4 class="h6 mb-1">INACAP - Sede Valparaíso</h4>
+                                <p class="text-secondary mb-1">Analista Programador</p>
+                                <p class="text-muted small mb-2">2024 - 2026 (estimado)</p>
+                                <p class="small text-secondary">Carrera técnica profesional enfocada en el desarrollo de software, programación y análisis de sistemas.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sección Habilidades -->
+                <div class="card mb-3">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <h3 class="card-title h5 mb-0">Habilidades</h3>
+                            <button class="btn btn-light btn-sm"><i class="bi bi-pencil"></i></button>
+                        </div>
+                        
+                        <div class="skills-list">
+                            <span class="badge bg-light text-dark border me-2 mb-2 p-2">HTML5</span>
+                            <span class="badge bg-light text-dark border me-2 mb-2 p-2">CSS3</span>
+                            <span class="badge bg-light text-dark border me-2 mb-2 p-2">Bootstrap</span>
+                            <span class="badge bg-light text-dark border me-2 mb-2 p-2">JavaScript</span>
+                            <span class="badge bg-light text-dark border me-2 mb-2 p-2">Programación Frontend</span>
+                            <span class="badge bg-light text-dark border me-2 mb-2 p-2">Bases de Datos</span>
+                            <span class="badge bg-light text-dark border me-2 mb-2 p-2">Trabajo en Equipo</span>
+                            <span class="badge bg-light text-dark border me-2 mb-2 p-2">Resolución de Problemas</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+</body>
+</html>
