@@ -1,28 +1,39 @@
-/* === COLORES LINKEDIN === */
+/* === COLORES LINKEDIN - PALETA PROFESIONAL === */
 :root {
     --linkedin-blue: #0a66c2;
     --linkedin-dark-blue: #004182;
     --linkedin-light-blue: #e2f0fe;
-    --linkedin-bg: #f3f2ef;
-    --linkedin-text: #000000;
+    --linkedin-bg: #f3f6f8;
+    --linkedin-text: #191919;
     --linkedin-text-secondary: #666666;
-    --linkedin-border: #e0e0e0;
+    --linkedin-border: #dce6f0;
     --linkedin-green: #057642;
+    --inacap-red: #e31837;
+    --inacap-orange: #ff6b35;
+    --card-hover: rgba(10, 102, 194, 0.08);
+    --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.04);
+    --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.08);
+    --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.12);
+    --radius-sm: 8px;
+    --radius-md: 12px;
+    --radius-lg: 16px;
 }
 
 /* === ESTILOS GENERALES === */
 body {
-    background-color: var(--linkedin-bg);
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    background: linear-gradient(180deg, #f0f4f8 0%, #f3f6f8 100%);
+    font-family: "Segoe UI", system-ui, -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", Arial, sans-serif;
     color: var(--linkedin-text);
+    line-height: 1.6;
 }
 
 /* === NAVBAR === */
 .linkedin-navbar {
-    background-color: #fff;
+    background: linear-gradient(90deg, #fff 0%, #fafbfc 100%);
     border-bottom: 1px solid var(--linkedin-border);
     padding: 0;
-    height: 52px;
+    height: 56px;
+    box-shadow: var(--shadow-sm);
 }
 
 .linkedin-navbar .navbar-brand {
@@ -30,10 +41,16 @@ body {
     font-size: 2.2rem;
     padding: 0;
     margin-right: 0.5rem;
+    transition: transform 0.2s ease;
+}
+
+.linkedin-navbar .navbar-brand:hover {
+    transform: scale(1.05);
 }
 
 .linkedin-navbar .navbar-brand i {
     color: var(--linkedin-blue);
+    filter: drop-shadow(0 2px 4px rgba(10, 102, 194, 0.3));
 }
 
 .linkedin-navbar .nav-link {
@@ -41,6 +58,8 @@ body {
     font-size: 0.75rem;
     padding: 0.25rem 0.5rem;
     min-width: 80px;
+    transition: all 0.2s ease;
+    position: relative;
 }
 
 .linkedin-navbar .nav-link:hover,
@@ -48,9 +67,22 @@ body {
     color: var(--linkedin-text);
 }
 
+.linkedin-navbar .nav-link.active::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 24px;
+    height: 2px;
+    background: var(--linkedin-text);
+    border-radius: 1px;
+}
+
 .linkedin-navbar .nav-link i {
     font-size: 1.3rem;
     margin-bottom: 1px;
+    transition: color 0.2s ease;
 }
 
 /* Search Box */
@@ -68,18 +100,21 @@ body {
 }
 
 .search-box input {
-    background-color: #edf3f8;
-    border: none;
-    border-radius: 4px;
-    padding: 0.5rem 0.75rem 0.5rem 2.5rem;
+    background: linear-gradient(135deg, #eef3f7 0%, #e8f0f7 100%);
+    border: 1px solid transparent;
+    border-radius: 20px;
+    padding: 0.6rem 0.75rem 0.6rem 2.5rem;
     width: 280px;
     font-size: 0.9rem;
+    transition: all 0.3s ease;
 }
 
 .search-box input:focus {
-    background-color: #fff;
-    outline: 2px solid var(--linkedin-blue);
-    box-shadow: none;
+    background: #fff;
+    border-color: var(--linkedin-blue);
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(10, 102, 194, 0.15);
+    width: 320px;
 }
 
 /* Profile Mini */
@@ -92,7 +127,7 @@ body {
 
 /* === ESPACIO PARA NAVBAR FIJA === */
 .navbar-spacer {
-    height: 52px;
+    height: 56px;
 }
 
 /* === CONTENIDO PRINCIPAL === */
@@ -104,9 +139,16 @@ body {
 /* === TARJETAS === */
 .card {
     border: 1px solid var(--linkedin-border);
-    border-radius: 8px;
-    box-shadow: 0 0 0 1px rgba(0,0,0,0.02), 0 2px 4px rgba(0,0,0,0.04);
+    border-radius: var(--radius-sm);
+    box-shadow: var(--shadow-sm);
     overflow: hidden;
+    background: #fff;
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.card:hover {
+    box-shadow: var(--shadow-md);
+    transform: translateY(-1px);
 }
 
 .card-body {
@@ -116,6 +158,7 @@ body {
 .card-title {
     color: var(--linkedin-text);
     font-weight: 600;
+    font-size: 1.1rem;
 }
 
 /* === TARJETA DE PERFIL === */
@@ -125,8 +168,18 @@ body {
 
 .profile-banner {
     height: 200px;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 30%, #f093fb 60%, var(--inacap-red) 100%);
     position: relative;
+}
+
+.profile-banner::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 60px;
+    background: linear-gradient(180deg, transparent 0%, rgba(0,0,0,0.1) 100%);
 }
 
 .profile-photo {
@@ -138,27 +191,45 @@ body {
     position: absolute;
     top: -76px;
     left: 24px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    box-shadow: var(--shadow-lg);
+    transition: all 0.3s ease;
+}
+
+.profile-photo:hover {
+    transform: scale(1.02);
+    box-shadow: 0 12px 32px rgba(0,0,0,0.2);
 }
 
 .profile-name {
-    font-size: 1.5rem;
-    font-weight: 600;
+    font-size: 1.6rem;
+    font-weight: 700;
     color: var(--linkedin-text);
+    letter-spacing: -0.02em;
 }
 
 .profile-headline {
     font-size: 1rem;
     font-weight: 400;
+    color: var(--linkedin-text-secondary);
 }
 
 .profile-location {
     font-size: 0.9rem;
+    color: var(--linkedin-text-secondary);
+}
+
+.profile-location i {
+    color: var(--linkedin-blue);
 }
 
 .profile-connections {
     font-size: 0.9rem;
     font-weight: 600;
+    color: var(--linkedin-blue);
+}
+
+.profile-connections i {
+    color: var(--linkedin-green);
 }
 
 /* Institution Badge */
@@ -177,40 +248,48 @@ body {
 
 /* === BOTONES === */
 .btn-primary {
-    background-color: var(--linkedin-blue);
-    border-color: var(--linkedin-blue);
+    background: linear-gradient(135deg, var(--linkedin-blue) 0%, var(--linkedin-dark-blue) 100%);
+    border: none;
     font-weight: 600;
-    padding: 0.5rem 1.25rem;
+    padding: 0.6rem 1.5rem;
     border-radius: 24px;
+    box-shadow: var(--shadow-sm);
+    transition: all 0.25s ease;
 }
 
 .btn-primary:hover {
-    background-color: var(--linkedin-dark-blue);
-    border-color: var(--linkedin-dark-blue);
+    background: linear-gradient(135deg, var(--linkedin-dark-blue) 0%, #003b6f 100%);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(10, 102, 194, 0.3);
 }
 
 .btn-outline-secondary {
-    border-color: var(--linkedin-text-secondary);
+    border: 1.5px solid var(--linkedin-border);
     color: var(--linkedin-text-secondary);
     font-weight: 600;
-    padding: 0.5rem 1.25rem;
+    padding: 0.6rem 1.5rem;
     border-radius: 24px;
+    background: #fff;
+    transition: all 0.25s ease;
 }
 
 .btn-outline-secondary:hover {
-    background-color: rgba(0,0,0,0.05);
-    border-color: var(--linkedin-text);
+    background: var(--card-hover);
+    border-color: var(--linkedin-text-secondary);
     color: var(--linkedin-text);
+    box-shadow: var(--shadow-sm);
 }
 
 .btn-light {
-    background-color: transparent;
+    background: transparent;
     border: none;
     color: var(--linkedin-text-secondary);
+    transition: all 0.2s ease;
 }
 
 .btn-light:hover {
-    background-color: rgba(0,0,0,0.05);
+    background: var(--card-hover);
+    color: var(--linkedin-blue);
 }
 
 /* === EXPERIENCIA Y EDUCACIÓN === */
@@ -231,17 +310,47 @@ body {
 /* === HABILIDADES === */
 .skills-list .badge {
     font-size: 0.85rem;
-    font-weight: 400;
-    border-radius: 16px;
+    font-weight: 500;
+    border-radius: 20px;
+    background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+    border: 1px solid var(--linkedin-border);
+    color: var(--linkedin-text);
+    transition: all 0.2s ease;
+}
+
+.skills-list .badge:hover {
+    background: linear-gradient(135deg, var(--linkedin-light-blue) 0%, #d0e8ff 100%);
+    border-color: var(--linkedin-blue);
+    color: var(--linkedin-blue);
+    cursor: default;
 }
 
 /* === ENLACES === */
 a {
     color: var(--linkedin-blue);
+    text-decoration: none;
+    transition: all 0.2s ease;
 }
 
 a:hover {
     color: var(--linkedin-dark-blue);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+}
+
+.stat-item {
+    transition: background 0.2s ease;
+    padding: 0.25rem;
+    border-radius: 4px;
+}
+
+.stat-item:hover {
+    background: var(--card-hover);
+}
+
+.stat-item i {
+    color: var(--linkedin-blue);
+    opacity: 0.8;
 }
 
 /* === RESPONSIVE === */
